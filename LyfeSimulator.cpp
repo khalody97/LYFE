@@ -22,7 +22,7 @@ int happinessCalculator(int happiness, int salary, int bank, int boss, int posit
     return happinessLvl;
 
 }
-percentExhuastion
+
 int rest(int exhaustion)
 {
   cout << "Resting..." << endl;
