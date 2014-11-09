@@ -10,7 +10,6 @@ import UIKit
 
 class ViewController: UIViewController {
     var slotpress = 0
-
     func switchColor(num: Int) {
         switch num {
         case 1:
@@ -90,6 +89,9 @@ class ViewController: UIViewController {
         switchColor(6)
     }
     
+    @IBOutlet weak var happinessLabel: UILabel!
+    @IBOutlet weak var bankLabel: UILabel!
+    @IBOutlet weak var Day: UILabel!
     @IBOutlet weak var slot1Label: UILabel!
     @IBOutlet weak var slot2Label: UILabel!
     @IBOutlet weak var slot3Label: UILabel!
@@ -100,6 +102,9 @@ class ViewController: UIViewController {
     let pickerData = ["Work", "Work Hard", "Rest", "Suck Up to Boss", "Romance", "Spend Time With Kids"]
     
     override func viewDidLoad() {
+        Day.text = "\(dayNumber)"
+        bankLabel.text = "\(bank)"
+        happinessLabel.text = "\(happiness)"
         switch slotpress {
         case 1:
             slot1Label.backgroundColor = UIColor.blueColor()
