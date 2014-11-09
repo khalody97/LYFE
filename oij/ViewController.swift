@@ -1,6 +1,6 @@
 //
-//  FirstViewController.swift
-//  LYFE
+//  ViewController.swift
+//  oij
 //
 //  Created by Conlan Davey on 11/8/14.
 //  Copyright (c) 2014 Dark Matter Co. All rights reserved.
@@ -8,9 +8,9 @@
 
 import UIKit
 
-class FirstViewController: UIViewController{
+class ViewController: UIViewController {
     var slotpress = 0
-    
+
     func switchColor(num: Int) {
         switch num {
         case 1:
@@ -76,7 +76,7 @@ class FirstViewController: UIViewController{
     @IBAction func slot3Button(sender: AnyObject) {
         slotpress = 3
         switchColor(3)
-    }    
+    }
     @IBAction func slot4Button(sender: AnyObject) {
         slotpress = 4
         switchColor(4)
@@ -96,7 +96,6 @@ class FirstViewController: UIViewController{
     @IBOutlet weak var slot4Label: UILabel!
     @IBOutlet weak var slot5Label: UILabel!
     @IBOutlet weak var slot6Label: UILabel!
-    
     
     let pickerData = ["Work", "Work Hard", "Rest", "Suck Up to Boss", "Romance", "Spend Time With Kids"]
     
@@ -129,7 +128,7 @@ class FirstViewController: UIViewController{
         slot4Label.text = pickerData[0]
         slot5Label.text = pickerData[0]
         slot6Label.text = pickerData[0]
-        
+
         // Do any additional setup after loading the view, typically from a nib.
     }
     

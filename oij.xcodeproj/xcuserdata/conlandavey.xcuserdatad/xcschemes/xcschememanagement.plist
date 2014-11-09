@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>LYFE.xcscheme</key>
+		<key>oij.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,12 +12,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>5D8DBC971A0ED47300F240F0</key>
+		<key>5D1C0E7E1A0EF2E200D22264</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5D8DBCAE1A0ED47300F240F0</key>
+		<key>5D1C0E931A0EF2E200D22264</key>
 		<dict>
 			<key>primary</key>
 			<true/>

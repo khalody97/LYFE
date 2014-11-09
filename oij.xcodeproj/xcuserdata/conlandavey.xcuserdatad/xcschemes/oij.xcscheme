@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5D8DBC971A0ED47300F240F0"
-               BuildableName = "LYFE.app"
-               BlueprintName = "LYFE"
-               ReferencedContainer = "container:LYFE.xcodeproj">
+               BlueprintIdentifier = "5D1C0E7E1A0EF2E200D22264"
+               BuildableName = "oij.app"
+               BlueprintName = "oij"
+               ReferencedContainer = "container:oij.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -28,10 +28,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5D8DBCAE1A0ED47300F240F0"
-               BuildableName = "LYFETests.xctest"
-               BlueprintName = "LYFETests"
-               ReferencedContainer = "container:LYFE.xcodeproj">
+               BlueprintIdentifier = "5D1C0E931A0EF2E200D22264"
+               BuildableName = "oijTests.xctest"
+               BlueprintName = "oijTests"
+               ReferencedContainer = "container:oij.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -46,20 +46,20 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5D8DBCAE1A0ED47300F240F0"
-               BuildableName = "LYFETests.xctest"
-               BlueprintName = "LYFETests"
-               ReferencedContainer = "container:LYFE.xcodeproj">
+               BlueprintIdentifier = "5D1C0E931A0EF2E200D22264"
+               BuildableName = "oijTests.xctest"
+               BlueprintName = "oijTests"
+               ReferencedContainer = "container:oij.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5D8DBC971A0ED47300F240F0"
-            BuildableName = "LYFE.app"
-            BlueprintName = "LYFE"
-            ReferencedContainer = "container:LYFE.xcodeproj">
+            BlueprintIdentifier = "5D1C0E7E1A0EF2E200D22264"
+            BuildableName = "oij.app"
+            BlueprintName = "oij"
+            ReferencedContainer = "container:oij.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -75,10 +75,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5D8DBC971A0ED47300F240F0"
-            BuildableName = "LYFE.app"
-            BlueprintName = "LYFE"
-            ReferencedContainer = "container:LYFE.xcodeproj">
+            BlueprintIdentifier = "5D1C0E7E1A0EF2E200D22264"
+            BuildableName = "oij.app"
+            BlueprintName = "oij"
+            ReferencedContainer = "container:oij.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -93,10 +93,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5D8DBC971A0ED47300F240F0"
-            BuildableName = "LYFE.app"
-            BlueprintName = "LYFE"
-            ReferencedContainer = "container:LYFE.xcodeproj">
+            BlueprintIdentifier = "5D1C0E7E1A0EF2E200D22264"
+            BuildableName = "oij.app"
+            BlueprintName = "oij"
+            ReferencedContainer = "container:oij.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
