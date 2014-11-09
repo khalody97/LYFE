@@ -19,7 +19,7 @@ int happinessCalculator()
     percentPartner = 25*(partner/100);
     percentKids = 20*(kids/100);
     happinessLvl = percentBank + percentBoss + percentPosition + percentExhuastion + percentPartner + percentKids;\
-    if(happinessLvl>100)
+    if(happinessLvl>=100)
     {
       happinessLvl = 100;
     }
@@ -32,12 +32,14 @@ int jobPromotionCalculator()
   {
     salary=salary+(10*raiseCount);
     raiseCount++;
+    salaryLvl = 0;
   }
   if(positionLvl>=15)
   {
     position++;
     salary=salary*1.5;
     raiseCount++;
+    positionLvl = 0;
   }
 }
 
