@@ -17,19 +17,25 @@ int happinessCalculator(int happiness, int salary, int bank, int boss, int posit
     return happinessLvl;
 
 }
+
 int stats(int happiness, int bank, int dayCount, int boss, int salary, int position, int exhaustion, int partner, int kids)
 {
-  cout << "Stats: \n" << "Happiness: " << happiness << endl;
+  cout << "-Stats- \n" << "Happiness: " << happiness << endl;
 
 }
+
 int day(int happiness, int bank, int dayCount,
         int boss, int salary, int position, int salaryLvl, int positionLvl, int raiseCount,
         int exhaustion, int partner, int kids)
 {
-  //int choice [6];
+  char choice[6];
   cout << "What do you wish to do today? Pick 6:" << endl;
   cout << "a) Rest \n b) Work \n c) Work Hard \n d) Suck Up To Boss \n e) Romance \n f) Spend Time With Kids \n g) Buy Kids Toys \n h) Lottery " << endl;
+  for(int i=0; i<=5; i++)
+  {
+    cin >> choice[i];
 
+  }
 
 }
 
@@ -38,7 +44,7 @@ int main()
   int happiness, bank, dayCount, gameLength,
     boss, salary, position, salaryLvl, positionLvl, raiseCount,
     exhaustion, partner, kids;
-    
+
   happiness = 0; //happiness level
   bank = 100; //money
   boss = 50; //boss opinion
@@ -54,7 +60,7 @@ int main()
   cin >> gameLength;
 
   happiness = happinessCalculator(happiness, salary, bank, boss, position, exhaustion, partner, kids); //level of happiness
-    
+
   for(dayCount = 0; dayCount <= gameLength; dayCount++)
   {
     stats(happiness, bank, dayCount,
