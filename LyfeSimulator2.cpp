@@ -4,9 +4,11 @@
 
 using namespace std;
 
-int happiness, bank,
+int happiness, bank, dayCount, gameLength,
+    boss, salary, position, salaryLvl, positionLvl, raiseCount,
+    exhaustion, partner, kids;
 
-int happinessCalculator(int happiness, int salary, int bank, int boss, int position, int exhaustion, int partner, int kids)
+int happinessCalculator()
 {
     int happinessLvl = 0;
     int percentBank, percentBoss, percentPosition, percentExhuastion, percentPartner, percentKids;
@@ -24,8 +26,22 @@ int happinessCalculator(int happiness, int salary, int bank, int boss, int posit
     return happinessLvl;
 
 }
+int jobPromotionCalculator()
+{
+  if(salaryLvl>=10)
+  {
+    salary=salary+(10*raiseCount);
+    raiseCount++;
+  }
+  if(positionLvl>=15)
+  {
+    position++;
+    salary=salary*1.5;
+    raiseCount++;
+  }
+}
 
-int rest(int exhaustion)
+int rest()
 {
   cout << "Resting..." << endl;
   exhaustion-=2;
@@ -35,57 +51,61 @@ int rest(int exhaustion)
   }
 }
 
-int work(int salaryLvl, int positionLvl, int boss)
+int work()
 {
   cout << "Working..." << endl;
   salaryLvl++;
   positionLvl++;
+  jobPromotionCalculator();
   boss+=5;
 }
 
-int workHard(int salaryLvl, int positionLvl, int boss, int partner, int kids, int exhaustion)
+int workHard()
 {
   cout << "Working...Hard..." << endl;
   salaryLvl+=2;
   positionLvl+=2;
+  jobPromotionCalculator();
   partner-=5;
   exhaustion++;
 }
 
-int suckUpToBoss(int positionLvl, int boss)
+int suckUpToBoss()
 {
   cout << "Sucking Up..." << endl;
   positionLvl+=2;
+  jobPromotionCalculator();
   boss+=10;
 }
 
-int romance(int partner, int bank)
+int romance()
 {
   cout << "Romancing..." << endl;
   partner+=10;
+  bank-=20;
 }
 
-int spendTimeWithKids(int partner, int kids)
+int spendTimeWithKids()
 {
   cout << "Raising Kids..." << endl;
   partner+=5;
   kids+=5;
 }
 
-int buyKidsToys(int kids, int bank)
+int buyKidsToys()
 {
   cout << "Wasting Money On Kids..." << endl;
   kids+=10;
   bank-=20;
 }
 
-int lottery(int bank)
+int lottery()
 {
   int luckyNumber;
-  int lotteryTickets[10];
+  int lotteryTickets[25];
   cout << "Striking It Rich..." << endl;
-  bank-=10;
-  for(int i=1; i<=10; i++)
+  bank-=25;
+  for(int i=0; i<=24; i++)
   {
       lotteryTickets[i] = rand() % 1000000 + 1;
       if(lotteryTickets[i]==luckyNumber)
@@ -96,15 +116,18 @@ int lottery(int bank)
 
 }
 
-int stats(int happiness, int bank, int dayCount, int boss, int salary, int position, int exhaustion, int partner, int kids)
+int stats()
 {
-  cout << "-Stats- \n" << "Happiness: " << happiness << "\n" << "Bank: " << bank << "\n" << endl;
+  cout << "-Stats- \n" << "Happiness: " << happiness << "   " << "Bank: " << bank << "\n" << endl;
+  cout << "Boss: " << boss << "   " << "Partner: " << partner << "\n" << endl;
+  cout << "Position: " << position << "   " << "Kids: " << kids << "\n" << endl;
+  cout << "Salary: " << salary << "   " << "Exhaustion: " << exhaustion << "\n" << endl;
+
+
 
 }
 
-int day(int happiness, int bank, int dayCount,
-        int boss, int salary, int position, int salaryLvl, int positionLvl, int raiseCount,
-        int exhaustion, int partner, int kids)
+int day()
 {
   char choice[6];
   int i;
@@ -112,6 +135,12 @@ int day(int happiness, int bank, int dayCount,
   cout << "a) Rest \n b) Work \n c) Work Hard \n d) Suck Up To Boss \n e) Romance \n f) Spend Time With Kids \n g) Buy Kids Toys \n h) Lottery " << endl;
 //  char restChoice='a', workChoice='b', workHardChoice='c', suckUpToBossChoice='d',
 //    romanceChoice='e', spendTimeWithKidsChoice='f', buyKidsToysChoice='g', lotteryChoice='h';
+  exhaustion++;
+  bank-=(.8*salary);
+  happiness-=10;
+  partner-=5;
+  kids-=5;
+  boss-=5;
   for(i=0; i<=5; i++)
   {
     cin >> choice[i];
@@ -120,42 +149,41 @@ int day(int happiness, int bank, int dayCount,
   {
     switch(choice[i]) {
       case 'a':
-        rest(exhaustion);
+        rest();
         break;
       case 'b':
-        work(salaryLvl, positionLvl, boss);
+        work();
         break;
       case 'c':
-        workHard(salaryLvl, positionLvl, boss, partner, kids, exhaustion);
+        workHard();
         break;
       case 'd':
-        suckUpToBoss(positionLvl, boss);
+        suckUpToBoss();
         break;
       case 'e':
-        romance(partner, bank);
+        romance();
         break;
       case 'f':
-        spendTimeWithKids(partner, kids);
+        spendTimeWithKids();
         break;
       case 'g':
-        buyKidsToys(kids, bank);
+        buyKidsToys();
         break;
       case 'h':
-        lottery(bank);
+        lottery();
         break;
       default:
-        rest(exhaustion);
+        rest();
      }
   }
+
+
 
 
 }
 
 int main()
 {
-  int happiness, bank, dayCount, gameLength,
-    boss, salary, position, salaryLvl, positionLvl, raiseCount,
-    exhaustion, partner, kids;
 
   happiness = 0; //happiness level
   bank = 100; //money
@@ -164,25 +192,19 @@ int main()
   position = 1; //starting job position
   salaryLvl = 0; //step towards raise
   positionLvl = 0; //step towards promotion
-  raiseCount = 0; //number of previous raises
+  raiseCount = 1; //number of previous raises
   exhaustion = 0; //level of exhaustion from lack of rest
   partner = 50; //partner's opinion
   kids = 50; //kid's opinion
   cout << "Enter desired game length: ";
   cin >> gameLength;
 
-  //happiness = happinessCalculator(happiness, salary, bank, boss, position, exhaustion, partner, kids); //level of happiness
 
   for(dayCount = 0; dayCount <= gameLength; dayCount++)
   {
-    happiness = happinessCalculator(happiness, salary, bank, boss, position, exhaustion, partner, kids);
-    stats(happiness, bank, dayCount,
-    boss, salary, position,
-    exhaustion, partner, kids);
-
-    day(happiness, bank, dayCount,
-        boss, salary, position, salaryLvl, positionLvl, raiseCount,
-        exhaustion, partner, kids);
+    happiness = happinessCalculator();
+    stats();
+    day();
 
   }
 }
