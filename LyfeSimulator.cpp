@@ -1,16 +1,25 @@
 #include <iostream>
-//#include <stdio.h>      /* printf */
+#include <stdio.h>      /* printf */
 
 using namespace std;
 
-int happinessCalculator(int bank, int boss, int position, int exhaustion, int partner, int kids)
+int happinessCalculator(int happiness, int salary, int bank, int boss, int position, int exhaustion, int partner, int kids)
 {
-  return 10;
+    int happinessLvl = 0;
+    int percentBank, percentBoss, percentPosition, percentExhuastion, percentPartner, percentKids;
+    percentBank = 25*(bank/(10*salary));
+    percentBoss = 10*(boss/100);
+    percentPosition = 20*(position/100);
+    percentExhuastion = -1*(exhaustion*10);
+    percentPartner = 25*(partner/100);
+    percentKids = 20*(kids/100);
+    happinessLvl = percentBank + percentBoss + percentPosition + percentExhuastion + percentPartner + percentKids;
+    return happinessLvl;
 
 }
 int stats(int happiness, int bank, int dayCount, int boss, int salary, int position, int exhaustion, int partner, int kids)
 {
-  cout << "Hello Stats" << endl;
+  cout << "Stats: \n" << "Happiness: " << happiness << endl;
 
 }
 int day(int happiness, int bank, int dayCount,
@@ -29,7 +38,8 @@ int main()
   int happiness, bank, dayCount, gameLength,
     boss, salary, position, salaryLvl, positionLvl, raiseCount,
     exhaustion, partner, kids;
-
+    
+  happiness = 0; //happiness level
   bank = 100; //money
   boss = 50; //boss opinion
   salary = 10; //current salary
@@ -43,9 +53,8 @@ int main()
   cout << "Enter desired game length: ";
   cin >> gameLength;
 
-  happiness = happinessCalculator(bank, boss, position, exhaustion, partner, kids); //level of happiness
-
-  cout << "Hello World" << endl;
+  happiness = happinessCalculator(happiness, salary, bank, boss, position, exhaustion, partner, kids); //level of happiness
+    
   for(dayCount = 0; dayCount <= gameLength; dayCount++)
   {
     stats(happiness, bank, dayCount,
