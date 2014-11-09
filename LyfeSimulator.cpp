@@ -13,7 +13,11 @@ int happinessCalculator(int happiness, int salary, int bank, int boss, int posit
     percentExhuastion = -1*(exhaustion*10);
     percentPartner = 25*(partner/100);
     percentKids = 20*(kids/100);
-    happinessLvl = percentBank + percentBoss + percentPosition + percentExhuastion + percentPartner + percentKids;
+    happinessLvl = percentBank + percentBoss + percentPosition + percentExhuastion + percentPartner + percentKids;\
+    if(happinessLvl>100)
+    {
+      happinessLvl = 100;
+    }
     return happinessLvl;
 
 }
@@ -21,11 +25,20 @@ int happinessCalculator(int happiness, int salary, int bank, int boss, int posit
 int rest(int exhaustion)
 {
   cout << "Resting..." << endl;
+  exhaustion = exhaustion - 2;
+  if(exhaustion<=0)
+  {
+    exhaustion = 0;
+  }
+  return exhaustion;
 }
 
 int work(int salaryLvl, int positionLvl, int boss)
 {
   cout << "Working..." << endl;
+  salaryLvl++;
+  positionLvl++;
+  boss+=5;
 }
 
 int workHard(int salaryLvl, int postionLvl, int boss, int partner, int kids, int exhaustion)
