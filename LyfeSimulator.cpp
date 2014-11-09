@@ -18,9 +18,19 @@ int happinessCalculator(int happiness, int salary, int bank, int boss, int posit
 
 }
 
+int rest(int exhaustion)
+{
+  cout << "Resting..." << endl;
+}
+
+int work(int salaryLvl, int positionLvl, int boss)
+{
+  cout << "Working..." << endl;
+}
+
 int stats(int happiness, int bank, int dayCount, int boss, int salary, int position, int exhaustion, int partner, int kids)
 {
-  cout << "-Stats- \n" << "Happiness: " << happiness << endl;
+  cout << "-Stats- \n" << "Happiness: " << happiness << "\n" << "Bank: " << bank << "\n" << endl;
 
 }
 
@@ -29,13 +39,29 @@ int day(int happiness, int bank, int dayCount,
         int exhaustion, int partner, int kids)
 {
   char choice[6];
+  int i;
   cout << "What do you wish to do today? Pick 6:" << endl;
   cout << "a) Rest \n b) Work \n c) Work Hard \n d) Suck Up To Boss \n e) Romance \n f) Spend Time With Kids \n g) Buy Kids Toys \n h) Lottery " << endl;
-  for(int i=0; i<=5; i++)
+//  char restChoice='a', workChoice='b', workHardChoice='c', suckUpToBossChoice='d',
+//    romanceChoice='e', spendTimeWithKidsChoice='f', buyKidsToysChoice='g', lotteryChoice='h';
+  for(i=0; i<=5; i++)
   {
     cin >> choice[i];
-
   }
+  for(i=0; i<=5; i++)
+  {
+    switch(choice[i]) {
+      case 'a':
+        rest(exhaustion);
+        break;
+      case 'b':
+        work(salaryLvl, positionLvl, boss);
+        break;
+      default:
+        rest(exhaustion);
+     }
+  }
+
 
 }
 
