@@ -1,5 +1,6 @@
 #include <iostream>
-#include <stdio.h>      /* printf */
+#include <stdio.h>   /* printf */
+#include <stdlib.h>
 
 using namespace std;
 
@@ -25,12 +26,11 @@ percentExhuastion
 int rest(int exhaustion)
 {
   cout << "Resting..." << endl;
-  exhaustion = exhaustion - 2;
+  exhaustion-=2;
   if(exhaustion<=0)
   {
     exhaustion = 0;
   }
-  return exhaustion;
 }
 
 int work(int salaryLvl, int positionLvl, int boss)
@@ -41,34 +41,57 @@ int work(int salaryLvl, int positionLvl, int boss)
   boss+=5;
 }
 
-int workHard(int salaryLvl, int postionLvl, int boss, int partner, int kids, int exhaustion)
+int workHard(int salaryLvl, int positionLvl, int boss, int partner, int kids, int exhaustion)
 {
   cout << "Working...Hard..." << endl;
+  salaryLvl+=2;
+  positionLvl+=2;
+  partner-=5;
+  exhaustion++;
 }
 
 int suckUpToBoss(int positionLvl, int boss)
 {
   cout << "Sucking Up..." << endl;
+  positionLvl+=2;
+  boss+=10;
 }
 
 int romance(int partner, int bank)
 {
   cout << "Romancing..." << endl;
+  partner+=10;
 }
 
 int spendTimeWithKids(int partner, int kids)
 {
   cout << "Raising Kids..." << endl;
+  partner+=5;
+  kids+=5;
 }
 
 int buyKidsToys(int kids, int bank)
 {
   cout << "Wasting Money On Kids..." << endl;
+  kids+=10;
+  bank-=20;
 }
 
 int lottery(int bank)
 {
+  int luckyNumber;
+  int lotteryTickets[10];
   cout << "Striking It Rich..." << endl;
+  bank-=10;
+  for(int i=1; i<=10; i++)
+  {
+      lotteryTickets[i] = rand() % 1000000 + 1;
+      if(lotteryTickets[i]==luckyNumber)
+      {
+        bank+=1000000;
+      }
+  }
+
 }
 
 int stats(int happiness, int bank, int dayCount, int boss, int salary, int position, int exhaustion, int partner, int kids)
@@ -146,10 +169,11 @@ int main()
   cout << "Enter desired game length: ";
   cin >> gameLength;
 
-  happiness = happinessCalculator(happiness, salary, bank, boss, position, exhaustion, partner, kids); //level of happiness
+  //happiness = happinessCalculator(happiness, salary, bank, boss, position, exhaustion, partner, kids); //level of happiness
 
   for(dayCount = 0; dayCount <= gameLength; dayCount++)
   {
+    happiness = happinessCalculator(happiness, salary, bank, boss, position, exhaustion, partner, kids);
     stats(happiness, bank, dayCount,
     boss, salary, position,
     exhaustion, partner, kids);
