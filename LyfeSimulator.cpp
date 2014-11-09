@@ -28,6 +28,36 @@ int work(int salaryLvl, int positionLvl, int boss)
   cout << "Working..." << endl;
 }
 
+int workHard(int salaryLvl, int postionLvl, int boss, int partner, int kids, int exhaustion)
+{
+  cout << "Working...Hard..." << endl;
+}
+
+int suckUpToBoss(int positionLvl, int boss)
+{
+  cout << "Sucking Up..." << endl;
+}
+
+int romance(int partner, int bank)
+{
+  cout << "Romancing..." << endl;
+}
+
+int spendTimeWithKids(int partner, int kids)
+{
+  cout << "Raising Kids..." << endl;
+}
+
+int buyKidsToys(int kids, int bank)
+{
+  cout << "Wasting Money On Kids..." << endl;
+}
+
+int lottery(int bank)
+{
+  cout << "Striking It Rich..." << endl;
+}
+
 int stats(int happiness, int bank, int dayCount, int boss, int salary, int position, int exhaustion, int partner, int kids)
 {
   cout << "-Stats- \n" << "Happiness: " << happiness << "\n" << "Bank: " << bank << "\n" << endl;
@@ -56,6 +86,24 @@ int day(int happiness, int bank, int dayCount,
         break;
       case 'b':
         work(salaryLvl, positionLvl, boss);
+        break;
+      case 'c':
+        workHard(salaryLvl, positionLvl, boss, partner, kids, exhaustion);
+        break;
+      case 'd':
+        suckUpToBoss(positionLvl, boss);
+        break;
+      case 'e':
+        romance(partner, bank);
+        break;
+      case 'f':
+        spendTimeWithKids(partner, kids);
+        break;
+      case 'g':
+        buyKidsToys(kids, bank);
+        break;
+      case 'h':
+        lottery(bank);
         break;
       default:
         rest(exhaustion);
