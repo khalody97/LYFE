@@ -18,7 +18,7 @@ int happinessCalculator()
     percentExhuastion = -1*(exhaustion*10);
     percentPartner = 25*(partner/100);
     percentKids = 20*(kids/100);
-    happinessLvl = percentBank + percentBoss + percentPosition + percentExhuastion + percentPartner + percentKids;\
+    happinessLvl = percentBank + percentBoss + percentPosition + percentExhuastion + percentPartner + percentKids;
     if(happinessLvl>=100)
     {
       happinessLvl = 100;
@@ -135,8 +135,7 @@ int day()
   int i;
   cout << "What do you wish to do today? Pick 6:" << endl;
   cout << "a) Rest \n b) Work \n c) Work Hard \n d) Suck Up To Boss \n e) Romance \n f) Spend Time With Kids \n g) Buy Kids Toys \n h) Lottery " << endl;
-//  char restChoice='a', workChoice='b', workHardChoice='c', suckUpToBossChoice='d',
-//    romanceChoice='e', spendTimeWithKidsChoice='f', buyKidsToysChoice='g', lotteryChoice='h';
+
   exhaustion++;
   bank-=(.8*salary);
   happiness-=10;
